@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ahbc.Class.Fourteen
 {
@@ -6,13 +7,44 @@ namespace Ahbc.Class.Fourteen
   {
     static void Main(string[] args)
     {
+      List<int> test = new List<int>();
+
       var vampire = new Vampire();
-      ITeeth toothyFellow = vampire;
-      ILimbs armMonster = vampire;
-      IMonster monster = vampire;
+      Console.WriteLine("Hey you vampire, what can you do?");
+      WhatCanYouDo(vampire);
+
+      Console.WriteLine("-------------------------");
+
+      var ghost = new Ghost();
+      Console.WriteLine("Hey you ghost, what can you do?");
+      WhatCanYouDo(ghost);
+
+      Console.ReadKey();
+
 
       //DriveTheWhip(new FordFocus(), 56);
       //TurnOnTheRadio(new FordFocus());
+    }
+
+    public static void WhatCanYouDo(IMonster monster)
+    {
+      Console.WriteLine("You can MASH!");
+
+      if (monster is ITeeth)
+      {
+        Console.WriteLine("You can CHOMP!");
+      }
+
+      //var limbs = monster as ILimbs;
+      //if (limbs != null)
+      //{
+      //  Console.WriteLine($"You can GRAB with {limbs.NumberOfLimbs} limbs!");
+      //}
+
+      if (monster is ILimbs limbs)
+      {
+        Console.WriteLine($"You can GRAB with {limbs.NumberOfLimbs} limbs!");
+      }
     }
 
     public static void DriveTheWhip(IVehicle vehicle, int speed)

@@ -24,6 +24,9 @@
       // Activate Synce
     }
 
-
+    public override void DriveFast()
+    {
+      base.DriveFast();
+    }
   }
 }
