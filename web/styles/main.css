@@ -1,0 +1,21 @@
+body {
+    margin: 50px 50px 50px 50px;
+    font-size: xx-large;
+}
+
+p {
+    
+    font-size: large;
+}
+
+#my-table-header {
+    color: cyan;
+}
+
+.extra-large, span {
+    font-size: x-large;
+}
+
+div p {
+    color: brown;
+}
