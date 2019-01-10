@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using Ahbc.Class.FortyFull.Models
+@model DemoInputModel
+
+<h2>User Information</h2>
+
+<div class="container">
+    <div class="row">
+        <form>
+            <div class="form-group">
+                @Html.LabelFor(x => x.FirstName)
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "Enter first name" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.MiddleName)
+                @Html.TextBoxFor(x => x.MiddleName, new { @class = "form-control", placeholder = "Enter middle name" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.LastName)
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "Enter last name" })
+            </div>
+            <div class="form-group">
+                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input", placeholder = "Enter last name" })
+                @Html.LabelFor(x => x.IsActive, new { @class = "form-check-label" })
+            </div>
+        </form>
+    </div>
+</div>
