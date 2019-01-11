@@ -9,23 +9,34 @@
 
 <div class="container">
     <div class="row">
-        <form>
+        @using (Html.BeginForm("Edit", "Demo", FormMethod.Post))
+        {
             <div class="form-group">
                 @Html.LabelFor(x => x.FirstName)
                 @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "Enter first name" })
+                @Html.ValidationMessageFor(x => x.FirstName, "Please enter a valid first name.", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.MiddleName)
                 @Html.TextBoxFor(x => x.MiddleName, new { @class = "form-control", placeholder = "Enter middle name" })
+                @Html.ValidationMessageFor(x => x.MiddleName, "Please enter a valid middle name.", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.LastName)
                 @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "Enter last name" })
+                @Html.ValidationMessageFor(x => x.LastName, "Please enter a valid last name.", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input", placeholder = "Enter last name" })
                 @Html.LabelFor(x => x.IsActive, new { @class = "form-check-label" })
+                @Html.ValidationMessageFor(x => x.IsActive)
             </div>
-        </form>
+
+            <button type="submit" class="btn-success">Submit</button>
+        }
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

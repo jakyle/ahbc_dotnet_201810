@@ -10,17 +10,20 @@ namespace Ahbc.Class.FortyFull.Controllers
     public class DemoController : Controller
     {
         // GET: Demo
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
-            var model = new DemoInputModel
-            {
-                FirstName = "Jason",
-                MiddleName = "Timothy",
-                LastName = "Robert",
-                IsActive = true
-            };
+            return View();
+        }
 
-            return View(model);
+        public ActionResult Edit(DemoInputModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Maybe save this?
+                return RedirectToRoute(new { controller="Home", action = "Index" });
+            }
+
+            return View("Index", model);
         }
     }
 }
