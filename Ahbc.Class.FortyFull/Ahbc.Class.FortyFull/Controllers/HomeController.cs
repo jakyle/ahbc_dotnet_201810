@@ -16,6 +16,9 @@ namespace Ahbc.Class.FortyFull.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            ViewBag.YabbaDabbaDoo = "Scooby-Doo";
+
+            ViewData["Hello"] = "World";
 
             return View();
         }

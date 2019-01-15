@@ -10,11 +10,13 @@ namespace Ahbc.Class.FortyFull.Controllers
     public class DemoController : Controller
     {
         // GET: Demo
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public ActionResult Edit(DemoInputModel model)
         {
             if (ModelState.IsValid)
