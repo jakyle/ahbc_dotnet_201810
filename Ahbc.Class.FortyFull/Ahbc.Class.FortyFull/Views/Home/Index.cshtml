@@ -32,7 +32,7 @@
     </div>
 </div>
 
-@if (Session.Keys.Count != 0)
+@if (Session["LastSaved"] != null)
 {
     <div>The last save occurred at @Session["LastSaved"]!</div>
 }
