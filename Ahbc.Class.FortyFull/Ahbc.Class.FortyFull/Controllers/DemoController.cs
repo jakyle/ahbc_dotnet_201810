@@ -21,7 +21,9 @@ namespace Ahbc.Class.FortyFull.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Maybe save this?
+                // Save to database here
+                Session["LastSaved"] = DateTime.Now.ToShortTimeString();
+                TempData["EditResult"] = "Data successfully saved";
                 return RedirectToRoute(new { controller="Home", action = "Index" });
             }
 

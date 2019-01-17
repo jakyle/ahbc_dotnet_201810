@@ -8,6 +8,8 @@
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+<div>@TempData["EditResult"]</div>
+
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
@@ -29,3 +31,8 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+@if (Session.Keys.Count != 0)
+{
+    <div>The last save occurred at @Session["LastSaved"]!</div>
+}
