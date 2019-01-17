@@ -32,6 +32,12 @@
     </div>
 </div>
 
+<div>Number of saves: <span id="numSaves"></span></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/site/js")
+}
+
 @if (Session["LastSaved"] != null)
 {
     <div>The last save occurred at @Session["LastSaved"]!</div>

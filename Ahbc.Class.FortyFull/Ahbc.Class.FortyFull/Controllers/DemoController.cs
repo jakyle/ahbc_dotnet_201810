@@ -21,6 +21,16 @@ namespace Ahbc.Class.FortyFull.Controllers
         {
             if (ModelState.IsValid)
             {
+                var count = 0;
+                var cookie = Request.Cookies.Get("valid-save");
+                if (cookie != null)
+                {
+                    count = int.TryParse(cookie.Value, out var num) ? num : 0;
+                }
+                count++;
+                Response.SetCookie(new HttpCookie("valid-save", count.ToString()));
+
+
                 // Save to database here
                 Session["LastSaved"] = DateTime.Now.ToShortTimeString();
                 TempData["EditResult"] = "Data successfully saved";
