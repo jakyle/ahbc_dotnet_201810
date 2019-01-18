@@ -9,6 +9,7 @@ namespace WebApplication1.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
+        public int StudentNumber { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }

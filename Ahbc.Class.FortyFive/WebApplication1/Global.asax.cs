@@ -14,7 +14,8 @@ namespace WebApplication1
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<SchoolContext>());
+            Database.SetInitializer(new SchoolInitializer());
+            new SchoolContext().Database.Initialize(false);
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
