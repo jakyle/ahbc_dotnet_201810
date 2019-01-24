@@ -14,4 +14,11 @@ namespace WebApplication1.Models
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
+
+	public class StudentAndEnrollments
+	{
+		public Student Students { get; set; }
+		public Enrollment Enrollment { get; set; }
+
+	}
 }

@@ -1,7 +1,13 @@
-﻿
+﻿@model IEnumerable<WebApplication1.Models.Student>
+
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<table>
+	@foreach (var student in Model)
+	{
+		<td>@Html.()</td>
+	}
+</table>
 
