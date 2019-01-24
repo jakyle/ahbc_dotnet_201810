@@ -4,10 +4,32 @@
 	ViewBag.Title = "Index";
 }
 
-<table>
-	@foreach (var student in Model)
-	{
-		<td>@Html.()</td>
-	}
-</table>
+<h2>Index</h2>
 
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+	<tr>
+
+		<th>
+			@Html.DisplayNameFor(model => model.LastName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.FirstName)
+		</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.LastName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.FirstName)
+			</td>
+		</tr>
+	}
+
+</table>

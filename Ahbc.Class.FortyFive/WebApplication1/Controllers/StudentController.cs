@@ -17,10 +17,15 @@ namespace WebApplication1.Controllers
 
 			var students = _context.Students;
 
-
-			var test = 2;
-
             return View(students);
         }
+
+		public ActionResult OneStudent(int id)
+		{
+			var student = _context.Students
+				.First(s => s.ID == id);
+
+			return View(student);
+		}
     }
 }
