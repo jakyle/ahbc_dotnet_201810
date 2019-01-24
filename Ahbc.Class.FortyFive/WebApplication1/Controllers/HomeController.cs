@@ -9,10 +9,13 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+		private readonly SchoolContext _context = new SchoolContext();
+
         public ActionResult Index()
         {
+			// SERVICE LOCATOR PATTERN... ANTI PATTERN!
             var context = new SchoolContext();
-            context.Students.First();
+            var student = context.Students.First();
 
             return View();
         }
